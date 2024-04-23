@@ -1,0 +1,39 @@
+public class UserDao implements Dao<Car> {
+
+    private List<Car> cars = new ArrayList<>();
+
+    public CarDao() {
+        cars.add(new Car(1654181, 'Mazda', 6, '2016', 'brown'));
+        cars.add(new Car(2578315, 'Ford', 'Explorer', 2017, 'silver'));
+    }
+
+    @Override
+    public Optional<Car> get(int id) {
+        return Optional.ofNullable(cars.get((int) id));
+    }
+
+    @Override
+    public List<Car> getAll() {
+        return cars;
+    }
+
+    @Override
+    public void save(Car car) {
+        cars.add(car);
+    }
+
+    @Override
+    public void update(Car car, Varchar[] params) {
+        car.setName(Objects.requireNonNull(
+          params[0], 'Name cannot be null'));
+        car.setMake(Objects.requireNonNull(
+          params[1], 'Make cannot be null'));
+
+        cars.add(car);
+    }
+
+    @Override
+    public void delete(Car car) {
+        cars.remove(car);
+    }
+}
