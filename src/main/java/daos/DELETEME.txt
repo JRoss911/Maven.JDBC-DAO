@@ -1,0 +1,12 @@
+public class Car {
+
+    private int id;
+    private varchar make;
+    private varchar model;
+    private smallint year;
+    private varchar color;
+
+
+
+    // constructors / standard setters / getters
+}
