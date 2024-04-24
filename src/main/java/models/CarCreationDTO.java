@@ -1,13 +1,8 @@
 package models;
 
-public class Car {
+import java.util.List;
 
-    private int id;
-    private String make;
-    private String model;
-    private Integer year;
-    private String color;
-
+public class CarCreationDTO {
 
     public int getId() {
         return id;
@@ -48,10 +43,10 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-    public Car(Integer id, String make, String model, Integer year, String brown) {
 
-    }
-
-
-    // constructors / standard setters / getters
+    private int id;
+    private String make;
+    private String model;
+    private Integer year;
+    private String color;
 }

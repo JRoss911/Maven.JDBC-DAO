@@ -1,13 +1,16 @@
 package models;
 
-public class Car {
+import java.util.ArrayList;
+import java.util.List;
 
+public class CarDto {
     private int id;
     private String make;
     private String model;
     private Integer year;
     private String color;
 
+    private List<Car> cars = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -48,10 +51,13 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-    public Car(Integer id, String make, String model, Integer year, String brown) {
 
+    public List<Car> getCars() {
+        return cars;
     }
 
-
-    // constructors / standard setters / getters
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 }
+

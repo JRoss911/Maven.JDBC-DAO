@@ -16,10 +16,6 @@ public class CarDao implements Dao<Car> {
         cars.add(new Car(2578315, "Ford", "Explorer", 2017, "silver"));
     }
 
-//    @Override
-//    public Optional<Car> findByID(int id) {
-//        return Optional.ofNullable(cars.findByID((int) id));
-//    }
 
     @Override
     public Optional<Car> findById(Integer id) {
@@ -36,20 +32,16 @@ public class CarDao implements Dao<Car> {
         cars.add(car);
     }
 
+
     @Override
     public void update(Car car, String[] params) {
+        car.setMake(Objects.requireNonNull(
+                params[0], "Name cannot be null"));
+        car.setModel(Objects.requireNonNull(
+                params[1], "Make cannot be null"));
 
+        cars.add(car);
     }
-
-//    @Override
-//    public void update(Car car, String[] params) {
-//        car.setMake(Objects.requireNonNull(
-//                params[0], 'Name cannot be null'));
-//        car.setModel(Objects.requireNonNull(
-//                params[1], 'Make cannot be null'));
-//
-//        cars.add(car);
-//    }
 
     @Override
     public void delete(Car car) {
