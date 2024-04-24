@@ -10,8 +10,6 @@ public interface Dao<T> {
 
     Optional<T> findById(Integer id);
 
-    Optional<T> findById(int id);
-
 
     List<T> findAll();
 
