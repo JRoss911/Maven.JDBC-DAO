@@ -23,6 +23,11 @@ public class CarDao implements Dao<Car> {
     }
 
     @Override
+    public Optional<Car> findById(int id) {
+        return Optional.empty();
+    }
+
+    @Override
     public List<Car> findAll() {
         return cars;
     }
